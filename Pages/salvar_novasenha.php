@@ -14,11 +14,11 @@
                 <br>
                 <input type="password" name="novaSenha" placeholder="Nova Senha" required>
                 <input type="hidden" name="email" value="<?php echo $_SESSION['reset_email']; ?>">
-            
                 <br><br>
-                <button type="submit">Entrar</button>
+                <button type="submit">Redefinir</button>
             </fieldset>
         </form>
     </div>
 </body>
 </html>
+

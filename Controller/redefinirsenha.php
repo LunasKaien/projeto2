@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (mysqli_num_rows($result) > 0) {
             // Se o email existir, redirecione para uma página onde o usuário pode redefinir a senha
             $_SESSION['reset_email'] = $email;
-            header("Location: ../Pages/reset_password.php");
+            header("Location: ../Pages/salvar_novasenha.php");
             exit();
         } else {
             echo "Nenhum usuário encontrado com esse email.";
