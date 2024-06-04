@@ -10,7 +10,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt = mysqli_prepare($link, $sql);
     if ($stmt) {
         mysqli_stmt_bind_param($stmt, "ss", $novaSenha, $email);
-
+        echo "$novaSenha<br>";
+        //echo "$email<br>";
+        // exit;
         if (mysqli_stmt_execute($stmt)) {
             echo "Senha redefinida com sucesso!";
             header("Location: ../Pages/login.php");

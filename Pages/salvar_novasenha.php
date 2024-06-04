@@ -13,7 +13,7 @@
                 <legend><b>Redefinir Senha</b></legend>
                 <br>
                 <input type="password" name="novaSenha" placeholder="Nova Senha" required>
-                <input type="hidden" name="email" value="<?php echo $_SESSION['reset_email']; ?>">
+                <input type="hidden" name="email" value="<?php echo $_GET['email']; ?>">
                 <br><br>
                 <button type="submit">Redefinir</button>
             </fieldset>
