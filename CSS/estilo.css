@@ -1,0 +1,37 @@
+.img-produto{
+    width: 100%;
+}
+
+.botaoSalvar{
+    background: rgb(252,193,18);
+    background: radial-gradient(circle, rgb(208,56,56) 0%, rgb(119,16,9) 100%);
+    padding: 10px 20px;
+    border: none;
+    font-weight: bold;
+}
+.botaoLimpar{
+    background: rgb(252,193,18);
+    background: radial-gradient(circle, rgb(26, 21, 21) 0%, rgb(160,154,154) 100%);
+    padding: 10px 20px;
+    border: none;
+    font-weight: bold;
+}
+.desabilitado{
+    background-color: #ccc;
+}
+
+.imgtabela{
+    width: 36px;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: linear-gradient(to right,rgb(127, 57, 197),rgb(76, 37, 185));
+}
+
+.test{
+
+    background-color: rgba(0, 0, 0, 0.382);
+    color:white;
+}
+
