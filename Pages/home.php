@@ -44,7 +44,7 @@ if (!isset($_SESSION['user_id'])) {
         <strong class="text-light">Desenvolvido por:</strong>
         <ul class="d-flex gap-4 m-0 p-0">
             <li><a href="https://github.com/Rosario0202">Lucas do Rosário</a></li>
-            <li><a href="#">Luiz Nascimento </a></li>
+            <li><a href="https://github.com/LunasKaien">Luiz Nascimento </a></li>
             <li><a href="https://github.com/palomabianchi">Paloma Bianchi</a></li>
         </ul>
     </footer>
