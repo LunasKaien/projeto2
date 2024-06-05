@@ -18,7 +18,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             if ($senha === $row['cad_senha']) {
                 $_SESSION['user_id'] = $row['cad_id'];
-                header("Location: ../Pages/home.php");
+                echo '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">';
+                echo '<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>';
+                echo '<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>';
+                echo '<script>';
+                echo '$(function() {';
+                echo '$("#dialog-message").dialog({';
+                echo 'modal: true,';
+                echo 'buttons: {';
+                echo '"OK": function() {';
+                echo '$( this ).dialog( "close" );';
+                echo '}';
+                echo '}';
+                echo '});';
+                echo '});';
+                echo '</script>';
+                echo '<div id="dialog-message" title="Sucesso">';
+                echo '<p><span class="ui-icon ui-icon-circle-check" style="float:left; margin-right: .3em;"></span>Login realizado com sucesso!</p>';
+                echo '</div>';
+                header("refresh:3; url=../Pages/home.php"); // Redireciona para a página home.php após 3 segundos
                 exit();
             } else {
                 // Senha incorreta
@@ -40,6 +58,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 echo '<div id="dialog-message" title="Erro">';
                 echo '<p><span class="ui-icon ui-icon-alert" style="float:left; margin-right: .3em;"></span>Senha incorreta.</p>';
                 echo '</div>';
+                header("refresh:3; url=../Pages/login.php"); // Redireciona para a página home.php após 3 segundos
+                exit();
             }
         } else {
             // Email incorreto
@@ -61,6 +81,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo '<div id="dialog-message" title="Erro">';
             echo '<p><span class="ui-icon ui-icon-alert" style="float:left; margin-right: .3em;"></span>Email incorreto.</p>';
             echo '</div>';
+            header("refresh:3; url=../Pages/login.php"); // Redireciona para a página login.php após 3 segundos
+            exit();
         }
 
         mysqli_stmt_close($stmt);
