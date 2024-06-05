@@ -36,7 +36,7 @@ if (!isset($_SESSION['user_id'])) {
         </div>
         <div>
             <h1 class="text-secondary m-0">
-                Sistema Controle <div class="text-center">de</div> <div class="text-center text-primary">Estoque</div>
+                Sistema de Controle <div class="text-center">de</div> <div class="text-center text-primary">Estoque</div>
             </h1>
         </div>
     </section>
