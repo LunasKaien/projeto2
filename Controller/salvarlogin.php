@@ -16,16 +16,51 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (mysqli_num_rows($result) > 0) {
             $row = mysqli_fetch_assoc($result);
 
-            // Direct string comparison
             if ($senha === $row['cad_senha']) {
-                $_SESSION['user_id'] = $row['cad_id']; // Assume que você tem um campo 'cad_id' no banco de dados
+                $_SESSION['user_id'] = $row['cad_id'];
                 header("Location: ../Pages/home.php");
                 exit();
             } else {
-                echo "Senha incorreta.";
+                // Senha incorreta
+                echo '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">';
+                echo '<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>';
+                echo '<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>';
+                echo '<script>';
+                echo '$(function() {';
+                echo '$("#dialog-message").dialog({';
+                echo 'modal: true,';
+                echo 'buttons: {';
+                echo '"OK": function() {';
+                echo '$( this ).dialog( "close" );';
+                echo '}';
+                echo '}';
+                echo '});';
+                echo '});';
+                echo '</script>';
+                echo '<div id="dialog-message" title="Erro">';
+                echo '<p><span class="ui-icon ui-icon-alert" style="float:left; margin-right: .3em;"></span>Senha incorreta.</p>';
+                echo '</div>';
             }
         } else {
-            echo "Nenhum usuário encontrado com esse email.";
+            // Email incorreto
+            echo '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">';
+            echo '<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>';
+            echo '<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>';
+            echo '<script>';
+            echo '$(function() {';
+            echo '$("#dialog-message").dialog({';
+            echo 'modal: true,';
+            echo 'buttons: {';
+            echo '"OK": function() {';
+            echo '$( this ).dialog( "close" );';
+            echo '}';
+            echo '}';
+            echo '});';
+            echo '});';
+            echo '</script>';
+            echo '<div id="dialog-message" title="Erro">';
+            echo '<p><span class="ui-icon ui-icon-alert" style="float:left; margin-right: .3em;"></span>Email incorreto.</p>';
+            echo '</div>';
         }
 
         mysqli_stmt_close($stmt);
@@ -36,6 +71,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     mysqli_close($link);
 }
 ?>
-
-
-
